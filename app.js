@@ -17,4 +17,8 @@ angular.module('flapperNews', [])
       // Prevents user from submitting blank title
       if(!$scope.title || $scope.title === '') { return; }
     };
+
+    $scope.incrementUpvotes = function(post){
+      post.upvotes += 1;
+    };
   }]);
