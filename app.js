@@ -1,6 +1,7 @@
 angular.module('flapperNews', [])
 .controller('MainCtrl', [
   '$scope',
+  // Scope function to display posts
   function($scope){
     $scope.posts=[
       {title: 'post 1', upvotes: 5},
@@ -9,4 +10,8 @@ angular.module('flapperNews', [])
       {title: 'post 4', upvotes: 9},
       {title: 'post 5', upvotes: 4}
     ];
+// Appends new post to the scope.posts variable
+    $scope.addPost = function(){
+      $scope.posts.push({title: 'A new post!', upvotes: 0});
+    };
   }]);
