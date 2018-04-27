@@ -4,12 +4,15 @@
   <meta charset="UTF-8">
   <title>Flapper News</title>
   <!-- <link rel="stylesheet" href="main.css"> -->
-  <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
-  <!-- <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.8/angular-material.min.css"> -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/angular-material/1.1.8/angular-material.min.js">
+  <link href="node_modules/@angular/material/prebuilt-themes/indigo-pink.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
   <script src="app.js"></script>
   <style> .glyphicon-thumbs-up { cursor:pointer } </style>
 </head>
+
 <body ng-app="flapperNews" ng-controller="MainCtrl">
   <!-- orderBy filter added to organize by upvotes -->
   <div class="row">
@@ -51,9 +54,9 @@
         placeholder="Link"
         ng-model="link"></input>
       </div>
-
       <button type="submit" class="btn btn-primary">Post</button>
     </form>
+
   </div>
 </div>
 </body>
