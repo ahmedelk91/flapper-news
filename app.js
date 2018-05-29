@@ -1,9 +1,11 @@
 angular.module('flapperNews', ['ui.router'])
+// Configuration
 .config([
   '$stateProvider',
   '$urlRouterProvider',
   function($stateProvider, $urlRouterProvider){
     $stateProvider
+    // States
     .state('home', {
       url:'/home',
       templateUrl:'/home.html',
@@ -13,23 +15,23 @@ angular.module('flapperNews', ['ui.router'])
       url:'/posts/{id}',
       templateUrl:'/posts.html',
       controller: 'PostsCtrl'
-    });
-
+    })
+    //defaults to the home state
     $urlRouterProvider.otherwise('/home')
   }])
+  // Factories
   .factory('posts', [function(){
     var o = {
       posts: []
     };
     return o;
   }])
-
+  // Controllers
   .controller('MainCtrl', [
     '$scope',
     'posts',
     // Scope function to display posts
     function($scope, posts){
-
       $scope.posts = posts.posts;
 
       // Appends new post to the scope.posts variable
@@ -48,4 +50,12 @@ angular.module('flapperNews', ['ui.router'])
       $scope.incrementUpvotes = function(post){
         post.upvotes += 1;
       };
-    }]);
+    }])
+
+    .controller('PostsCtrl', [
+      '$scope',
+      '$stateParams',
+      'posts',
+      function($scope, $stateParams, posts){
+
+      }]);
